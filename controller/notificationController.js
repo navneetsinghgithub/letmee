@@ -28,12 +28,12 @@ module.exports = {
                 return res.redirect("/loginPage")
             }
             const notificationData = await notificationModel.find().populate(['senderId', 'receiverId'])
-          
             res.render("notification/notification", { session: req.session.users, notificationData })
         } catch (error) {
             console.log(error, "error");
         }
     },
+
 
     notificationView: async (req, res) => {
         try {
